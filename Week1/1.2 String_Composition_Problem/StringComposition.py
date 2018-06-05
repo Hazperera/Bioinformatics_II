@@ -46,6 +46,10 @@ def parse_args(args) :
 
     return parser.parse_args()
 
+#------------------------------------------------------------------------------
+# Name : main()
+# Description : Where the program starts.
+#------------------------------------------------------------------------------
 def main() :
     args = parse_args(sys.argv[1:])
 
