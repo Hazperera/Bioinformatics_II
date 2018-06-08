@@ -1,5 +1,14 @@
 import sys, argparse
 
+#------------------------------------------------------------------------------
+# Name : findOverlapGraph()
+# Function : Iterates over list of kmers to find overlap graph.
+# Parameters :
+#       (list) kmers - list of kmers.
+#
+# Return Value :
+#       (dict) kmerDict - representation of overlap graph.
+#------------------------------------------------------------------------------
 def findOverlapGraph( kmers ) :
     kmerDict = dict()
 
@@ -21,9 +30,7 @@ def findOverlapGraph( kmers ) :
 # Name : parse_args()
 # Function : Parses the arguments with given flags when running the program.
 # Parameters/Flags :
-#       Input file example :
-#           5
-#           CAATCCAAC
+#       Input file.
 #
 # Return Value :
 #       parser.parse_args() - Returning 'ArgumentParser' object with info.
@@ -59,12 +66,14 @@ def main() :
 
     if 'o' in args :
         with args.o as outfile :
+
+            # format answer
             for k, v in graphDict.items() :
                 if v :
                     outfile.write( k + ' -> ' + ','.join(v) + '\n' )
                 else : continue
 
-            #outfile.write()
+            outfile.close()
 
 
 if __name__ == '__main__' :
