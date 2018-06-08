@@ -38,8 +38,8 @@ def findOverlapGraph( kmers ) :
 def parse_args(args) :
     parser = argparse.ArgumentParser(
                 usage = '%(prog)s <input_file> [-o] <output_file>',
-                description = 'It will provide all possible k-mers from a '
-                            + 'given sequence')
+                description = 'It will provide an overlap graph from '
+                            + 'given list of kmers.')
     # Optional Arguments (Flags)
     parser.add_argument('--output', '-o', dest = 'o', required = False,
                         nargs = '?', type = argparse.FileType('w'),
@@ -48,7 +48,7 @@ def parse_args(args) :
 
     # Positional Arguments (User input parameters)
     parser.add_argument('file', type = argparse.FileType('r'),
-                                help = 'File contaning value k and a sequence.')
+                                help = 'File contaning list of kmers.')
 
     return parser.parse_args()
 
